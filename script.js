@@ -20,8 +20,8 @@ function sendQuestion() {
             Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: sQuestion,
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: sQuestion }],
             max_tokens: 2048,
             temperature: 0.5,
         })
